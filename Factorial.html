@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Tobi Olusesi">
+        <title>Factorial generator</title>
+    </head>
+    <body>
+        <form id="calc">
+            <label for="whole">Please enter a whole number:</label>
+            <input type="number" min="0" max="15" required id="whole"><br><br>
+            <input type="button" value="GenerateFactorial" id="generate" onclick="fac(this.form)">
+        </form><br>
+        <output form="calc" id="result"></output>
+        <script>
+                var num // user's input
+                var count // the lowest user's input
+                var Factorial // the first number in a factorial
+            function fac (form) {
+                num = Number(document.getElementById("whole").value);
+                count = 2;
+                Factorial = 1;
+                for (i=count; i <= num; i++) {
+                    Factorial *= count;
+                    count++;
+                }
+                document.getElementById("result").innerHTML = num + "!: " + Factorial;
+            }
+        </script>
+    </body>
+</html>
